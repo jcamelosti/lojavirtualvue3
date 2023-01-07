@@ -30,10 +30,14 @@ export default {
   name: 'Home',
   data() {
     return {
-      
+       
     }
   },
-
+  computed:{
+    products(){
+      return this.$store.state.products
+    }
+  },
   methods: {
    
   }
