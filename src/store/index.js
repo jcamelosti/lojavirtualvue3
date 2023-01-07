@@ -11,8 +11,11 @@ export default createStore({
       state.products = products;
     },
     addToBagMutation(state, product){
-      console.log('adicionado');
       state.productsInBag.push(product);
+    },
+    removeFromBagMutation(state, productId){
+      let updateBag = state.productsInBag.filter(item => item.id != productId);
+      state.productsInBag = updateBag;
     }
   },
   actions: {
@@ -24,6 +27,9 @@ export default createStore({
     },
     addToBagAction({commit}, product){
       commit('addToBagMutation', product);
+    },
+    removeFromBagAction({commit}, productId){
+      commit('removeFromBagMutation', productId);
     }
   },
   modules: {
