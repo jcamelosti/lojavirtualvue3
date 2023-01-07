@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
     <router-link to="/">Início</router-link> -
-    <router-link to="/basket">Carrinho (0)</router-link> - 
+    <router-link to="/basket">Carrinho ({{ productsInBag.length }})</router-link> - 
   </div>
   <router-view/>
 </template>
@@ -11,6 +11,11 @@
     created(){
       this.$store.dispatch('loadProducts');
     },
+    computed:{
+      productsInBag(){
+        return this.$store.state.productsInBag;
+      }
+    }
   }
   
 </script>

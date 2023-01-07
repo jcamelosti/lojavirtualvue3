@@ -12,7 +12,6 @@
       </div>
 
     </div>
-    {{ productsInBag.length }}
   </div>
 </template>
 
