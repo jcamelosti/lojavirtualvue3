@@ -27,7 +27,7 @@ export default {
   },
   computed: mapState([
     'products',
-    'productInBag'
+    'productsInBag'
   ]),
   
   methods: {
