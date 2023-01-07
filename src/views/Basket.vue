@@ -16,7 +16,7 @@
               <span class="amount">R$ {{ (product.price * product.quantity).toFixed(2) }}</span>
             </div>
           </div>
-          <div class="grand-total"> Total do pedido: R$ 22.30</div>
+          <div class="grand-total"> Total do pedido: R$ {{ orderTotal().toFixed(2) }}</div>
         </template>
         <template v-else>
             <h4>No Items in Bag</h4>
@@ -31,7 +31,15 @@ export default {
   name: 'Basket',
 
   methods: {
-   
+    orderTotal(){
+      let total = 0;
+      
+      this.productsInBag.forEach(function(item){
+        total+= item.quantity * item.price;
+      });
+
+      return total;
+    }
   },
   computed: mapState([
     'productsInBag'
