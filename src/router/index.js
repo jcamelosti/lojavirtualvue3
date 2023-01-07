@@ -13,7 +13,6 @@ const routes = [
     name: 'Basket',
     component: Basket
   },
-  
 ]
 
 const router = createRouter({

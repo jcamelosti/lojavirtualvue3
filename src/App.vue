@@ -1,15 +1,21 @@
 <template>
   <div id="nav">
     <router-link to="/">Início</router-link> -
-    <router-link to="/basket">Carrinho (0)</router-link> 
+    <router-link to="/basket">Carrinho (0)</router-link> - 
   </div>
   <router-view/>
 </template>
 
 <script>
-
+  import axios from 'axios';
+  
   export default {
-
+    created(){
+      axios.get('https://fakestoreapi.com/products')
+      .then((response) => {
+        console.log(response.data)
+      })
+    }
   }
   
 </script>
